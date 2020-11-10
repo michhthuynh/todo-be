@@ -1,4 +1,3 @@
-const collectionModel = require("../../models/collection.model")
 const taskModel = require("../../models/task.model")
 const logger = require('logging').default('Get Collection')
 

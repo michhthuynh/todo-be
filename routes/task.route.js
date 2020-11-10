@@ -6,7 +6,9 @@ const updateTask = require('../controllers/task/updateTask.controller')
 const router = express.Router()
 
 router.post('/create', postTask)
+
 router.delete('/remove', removeTask)
+
 router.put('/update', updateTask)
 
 module.exports = router

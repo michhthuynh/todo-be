@@ -1,7 +1,56 @@
-POST http://localhost:5000
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
     "username": "huynh.hoang",
     "password": "12345678x@X"
+}
+
+###
+POST http://localhost:5000/api/collection/create
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+{
+    "title": "test",
+    "user_id": "5faa16bc7f927f08689a9401"
+}
+
+###
+GET  http://localhost:5000/api/collection/5faa16bc7f927f08689a9401
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+###
+POST   http://localhost:5000/api/task/create
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+{
+    "description": "hello 1",
+    "collection_id": "5faa4061bb6a86128875b512"
+}
+
+###
+GET    http://localhost:5000/api/collection/get-task?id=5faa4061bb6a86128875b512
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+
+###
+DELETE   http://localhost:5000/api/collection/remove
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+{
+    "id": "5faa3eacc2400b118fcdc3d0"
+}
+
+###
+PUT http://localhost:5000/api/collection/5faa447f5590851359911a45/title/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+
+{
+    "title": "allllll"
 }

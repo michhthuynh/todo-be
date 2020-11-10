@@ -7,6 +7,7 @@ const verifyLogin = require('../middleware/verifyLogin.middleware')
 
 
 userRouter.post('/signup', postSignUp)
+
 userRouter.post('/login', verifyLogin, postLogin)
 
 module.exports = userRouter

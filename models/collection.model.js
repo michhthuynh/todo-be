@@ -13,7 +13,6 @@ const collectionSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-
 })
 
 const collectionModel = mongoose.model('Collection', collectionSchema)
