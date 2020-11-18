@@ -2,20 +2,26 @@ const userModel = require('../../models/user.model')
 const validator = require('validator')
 const EmailValidator = require('email-validator')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 const postSignUp = async (req, res) => {
     const { username, password, email } = req.body
-    const fullName = req.body.full_name
+    const fullName = req.body.fullName
+
+    if (username === undefined || password === undefined || email === undefined || fullName === undefined) {
+        res.sendStatus(400)
+        return
+    }
 
     // validate fields
-    if (!validator.isLength(username, { min: 10, max: 26 })) {
+    if (!validator.isLength(username, { min: 6, max: 16 })) {
         res.status(400).json({
             message: "Username is invalid"
         })
         return
     }
 
-    if (!validator.isLength(fullName, { min: 10, max: 26 })) {
+    if (!validator.isLength(fullName, { min: 6, max: undefined })) {
         res.status(400).json({
             message: "Full name is invalid"
         })
@@ -30,14 +36,14 @@ const postSignUp = async (req, res) => {
         return
     }
 
-    if (!validator.isLength(password, { min: 10, max: 26 })) {
+    if (!validator.isLength(password, { min: 6, max: 16 })) {
         res.status(400).json({
             message: "Password is invalid"
         })
         return
     }
 
-    if (!validator.isLength(email, { min: 10, max: undefined })) {
+    if (!validator.isLength(email, { min: 6, max: undefined })) {
         res.status(400).json({
             message: "Email is invalid"
         })
@@ -82,8 +88,17 @@ const postSignUp = async (req, res) => {
             })
                 .then(data => {
                     console.log(`Create account successfully: ${data['username']}`)
-                    res.status(201).json({
-                        message: 'Sign up successfully'
+                    jwt.sign({ username }, process.env.SECRET_STRING, { expiresIn: '24h' }, (err, token) => {
+                        if (err) {
+                            console.log(err.message)
+                            res.sendStatus(503)
+                            return
+                        }
+                        res.json({
+                            id: data.id,
+                            token
+                        })
+                        return
                     })
                     return
                 })

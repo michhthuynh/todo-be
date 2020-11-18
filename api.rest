@@ -9,7 +9,7 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/collection/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 {
     "title": "test",
@@ -19,28 +19,28 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1e
 ###
 GET  http://localhost:5000/api/collection/5faa16bc7f927f08689a9401
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 ###
 POST   http://localhost:5000/api/task/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 {
-    "description": "hello 1",
-    "collection_id": "5faa4061bb6a86128875b512"
+    "description": "hello 2",
+    "collection_id": "5fab58658ca70a14ec599483"
 }
 
 ###
-GET    http://localhost:5000/api/collection/get-task?id=5faa4061bb6a86128875b512
+GET    http://localhost:5000/api/collection/get-task?id=5fab58658ca70a14ec599483
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 
 ###
 DELETE   http://localhost:5000/api/collection/remove
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 {
     "id": "5faa3eacc2400b118fcdc3d0"
@@ -49,8 +49,20 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1e
 ###
 PUT http://localhost:5000/api/collection/5faa447f5590851359911a45/title/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA0OTgyNzQ3LCJleHAiOjE2MDUwNjkxNDd9.yS6bLFn04ku5xa5Hv5hNW2HZ_hYZoeBvAuqVjsvNPpE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
 
 {
     "title": "allllll"
+}
+
+
+###
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "username": "huynh.hoang",
+    "password": "12345678x@X",
+    "fullName": "huynh hoang",
+    "email": "huynh.hoang@gmail.com"
 }

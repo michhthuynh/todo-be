@@ -7,9 +7,11 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 const cors = require('cors')
 const connectDatabase = require('./configs/db.config')
-
+const helmet = require("helmet");
 const logger = createLogging.default('App')
+
 dotenv.config()
+app.use(helmet());
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())

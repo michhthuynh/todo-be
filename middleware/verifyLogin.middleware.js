@@ -12,14 +12,14 @@ const verifyLogin = async (req, res, next) => {
         return
     }
 
-    if (!validator.isLength(username, { min: 10, max: 26 })) {
+    if (!validator.isLength(username, { min: 6, max: 26 })) {
         res.status(400).json({
             message: "Username is invalid"
         })
         return
     }
 
-    if (!validator.isLength(password, { min: 10, max: 26 })) {
+    if (!validator.isLength(password, { min: 6, max: 26 })) {
         res.status(400).json({
             message: "Password is invalid"
         })
@@ -42,6 +42,7 @@ const verifyLogin = async (req, res, next) => {
         })
         return;
     }
+    res.locals.id = result[0]['id']
     console.log('Verify account successfully')
     next()
 }
