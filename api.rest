@@ -5,11 +5,21 @@ Content-Type: application/json
     "username": "huynh.hoang",
     "password": "12345678x@X"
 }
+###
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "username": "huynh.hoang",
+    "password": "12345678x@X",
+    "fullName": "huynh hoang",
+    "email": "huynhhoang@gmail.com"
+}
 
 ###
 POST http://localhost:5000/api/collection/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1Nzc3MzQyLCJleHAiOjE2MDU4NjM3NDJ9.j-2XKWvGU2okCyDQIl9n3Diby2j1wIczKnGaDt-2dx4
 
 {
     "title": "test",
