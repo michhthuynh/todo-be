@@ -2,7 +2,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "huynh.hoang",
+    "username": "huynhhoang",
     "password": "12345678x@X"
 }
 ###
@@ -19,32 +19,33 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/collection/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1Nzc3MzQyLCJleHAiOjE2MDU4NjM3NDJ9.j-2XKWvGU2okCyDQIl9n3Diby2j1wIczKnGaDt-2dx4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYyNzM4OTcsImV4cCI6MTYwNjM2MDI5N30.vfzGZDsoMeI24Rm7-cdOyYJn5ItleB1IsFFOxWnwbYQ
 
 {
-    "title": "test",
-    "user_id": "5faa16bc7f927f08689a9401"
+    "title": "Todo 3",
+    "user_id": "5fbb22e72c212d001e4a3a75"
 }
 
 ###
-GET  http://localhost:5000/api/collection/5faa16bc7f927f08689a9401
+GET  http://localhost:5000/api/collection/5fbb22e72c212d001e4a3a75
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYwOTk2ODcsImV4cCI6MTYwNjE4NjA4N30.4sX2YLoxxjYnx3AfYKDUUwXNjNfsF_MoYPx2GkzJO0M
 
 ###
 POST   http://localhost:5000/api/task/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYyNzAyMjIsImV4cCI6MTYwNjM1NjYyMn0.bbJGV7sQn5vOle_M1T98Xyne4t6cS41q7jhOa-7LnWQ
+
 
 {
-    "description": "hello 2",
-    "collection_id": "5fab58658ca70a14ec599483"
+    "description": "hello 3",
+    "collection_id": "5fbb2ff62c212d001e4a3a7a"
 }
 
 ###
-GET    http://localhost:5000/api/collection/get-task?id=5fab58658ca70a14ec599483
+GET    http://localhost:5000/api/collection/get-task?id=5fbb2ff62c212d001e4a3a7a
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYyMDIzOTIsImV4cCI6MTYwNjI4ODc5Mn0.cuI7rn-V1Q59G3HbIUUbndTXhS_UW7fQxCF_D_V_XVY
 
 
 ###

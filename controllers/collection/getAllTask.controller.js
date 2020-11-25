@@ -3,7 +3,7 @@ const logger = require('logging').default('Get Collection')
 
 module.exports = getAllTask = async (req, res) => {
     const id = req.query.id
-    console.log(id)
+
     if (typeof id === undefined) {
         res.sendStatus(400)
         return
