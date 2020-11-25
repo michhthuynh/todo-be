@@ -2,7 +2,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "huynhhoang",
+    "username": "huynh.hoang",
     "password": "12345678x@X"
 }
 ###
@@ -23,7 +23,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1e
 
 {
     "title": "Todo 3",
-    "user_id": "5fbb22e72c212d001e4a3a75"
+    "user_id": "5faa16bc7f927f08689a9401"
 }
 
 ###
@@ -34,8 +34,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1e
 ###
 POST   http://localhost:5000/api/task/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYyNzAyMjIsImV4cCI6MTYwNjM1NjYyMn0.bbJGV7sQn5vOle_M1T98Xyne4t6cS41q7jhOa-7LnWQ
-
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA2MjkyOTEwLCJleHAiOjE2MDYzNzkzMTB9.xUcpa_AZ4s93o7gNyWogpqZVNfUbeli_0kIysy4I1wM
 
 {
     "description": "hello 3",
@@ -60,7 +59,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1e
 ###
 PUT http://localhost:5000/api/collection/5faa447f5590851359911a45/title/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA1MDY0NzUxLCJleHAiOjE2MDUxNTExNTF9.64lxsvZ2983b_uQdWKGj9-R4fmZe0TUKtc1uzq4O07s
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA2MjkyOTEwLCJleHAiOjE2MDYzNzkzMTB9.xUcpa_AZ4s93o7gNyWogpqZVNfUbeli_0kIysy4I1wM
 
 {
     "title": "allllll"
@@ -77,3 +76,8 @@ Content-Type: application/json
     "fullName": "huynh hoang",
     "email": "huynh.hoang@gmail.com"
 }
+
+###
+GET  http://localhost:5000/api/collection/5faa16bc7f927f08689a9401/task
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA2MjkyOTEwLCJleHAiOjE2MDYzNzkzMTB9.xUcpa_AZ4s93o7gNyWogpqZVNfUbeli_0kIysy4I1wM

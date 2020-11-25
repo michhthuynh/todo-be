@@ -17,13 +17,43 @@ module.exports = getAllTaskOfUser = async (req, res) => {
     return
   }
 
-  const listId = collections.map(collection => {
-    return (collection['_id'])
+  const listCollection = collections.map(collection => {
+    return ({
+      id: collection['_id'],
+      title: collection['title']
+    })
   })
 
-  const data = listId.map(async id => {
-    return res = await taskModel.findById(id)
-  })
-  logger.info(data)
-  res.sendStatus(200)
+  const fetch = (title, id) => {
+    return new Promise(
+      (resolve, reject) => {
+        taskModel.find({ collection_id: id })
+          .then(data => {
+            resolve({
+              title: title,
+              collection_id: id,
+              task_list: data
+            })
+          })
+          .catch(err => {
+            reject(err.message)
+          })
+      }
+    )
+  }
+
+  const getData = async () => {
+    return Promise.all(listCollection.map(item => fetch(item['title'], item['id'])))
+  }
+
+  getData()
+    .then(data => {
+      res.status(200).json({
+        message: data
+      })
+      return
+    })
+    .catch(err => {
+      res.sendStatus(400)
+    })
 }
