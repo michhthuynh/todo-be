@@ -35,5 +35,5 @@ module.exports = removeCollection = async (req, res) => {
     res.sendStatus(400)
     return
   })
-  
+
 }

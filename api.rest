@@ -19,18 +19,17 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/collection/create
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYyNzM4OTcsImV4cCI6MTYwNjM2MDI5N30.vfzGZDsoMeI24Rm7-cdOyYJn5ItleB1IsFFOxWnwbYQ
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA2MzcyMDAyLCJleHAiOjE2MDY0NTg0MDJ9.lEkSOFryM5S1XjRS8P7eBS2E0fs2WlSbaf91gLo6IWI
 
 {
-    "title": "Todo 3",
-    "user_id": "5faa16bc7f927f08689a9401"
+    "title": "Todo 1",
+    "user_id": "5fbf4a8af8f6ad001d8984ed"
 }
 
 ###
 GET  http://localhost:5000/api/collection/5fbb22e72c212d001e4a3a75
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oaG9hbmciLCJpYXQiOjE2MDYwOTk2ODcsImV4cCI6MTYwNjE4NjA4N30.4sX2YLoxxjYnx3AfYKDUUwXNjNfsF_MoYPx2GkzJO0M
-
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1eW5oLmhvYW5nIiwiaWF0IjoxNjA2MzcxOTc4LCJleHAiOjE2MDY0NTgzNzh9._bpk_ZRD8i0eHgTuZIMPEKKtqVzpZ6YfVsaRE_BT61Q
 ###
 POST   http://localhost:5000/api/task/create
 Content-Type: application/json
