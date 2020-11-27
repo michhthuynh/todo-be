@@ -3,8 +3,9 @@ const collectionModel = require('../../models/collection.model')
 const logger = require('logging').default('Create Task')
 
 module.exports = postTask = async (req, res) => {
-    const { description, collection_id, date } = req.body
+    const { description, collection_id, date, status } = req.body
     let temp = ''
+    let tempStatus = false
 
     if (description === undefined) {
         res.sendStatus(400)
@@ -20,8 +21,12 @@ module.exports = postTask = async (req, res) => {
         temp = date
     }
 
+    if (status !== undefined) {
+        tempStatus = status
+    }
+
     collectionModel.findById(collection_id).then(data => {
-        if( data === null ) {
+        if (data === null) {
             logger.error(`Message: No Collection`)
             res.sendStatus(400)
             return
@@ -29,7 +34,8 @@ module.exports = postTask = async (req, res) => {
         taskModel.create({
             description,
             collection_id,
-            date: temp
+            date: temp,
+            status: tempStatus
         }).then(data => {
             logger.info(`Message: Create Task ${data.id}`)
             res.sendStatus(200)
@@ -41,5 +47,5 @@ module.exports = postTask = async (req, res) => {
         logger.error(`Message: ${err.message}`)
         res.sendStatus(400)
     })
-    
+
 }

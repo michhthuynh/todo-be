@@ -8,7 +8,6 @@ const verifyToken = (req, res, next) => {
             })
             return
         }
-        console.log(data)
         res.locals.username = data.username
         next()
     })
