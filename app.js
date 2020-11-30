@@ -7,11 +7,22 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 const cors = require('cors')
 const connectDatabase = require('./configs/db.config')
-const helmet = require("helmet");
+const helmet = require('helmet');
 const logger = createLogging.default('App')
+const morgan = require('morgan')
+const rfs = require('rotating-file-stream')
+const path = require('path')
+
+const isProduction = process.env.NODE_ENV === "production"
+
+const accessLogStream = rfs.createStream("access.log", {
+    interval: "1d",
+    path: path.join(__dirname, "log")
+})
 
 dotenv.config()
 app.use(helmet());
+app.use(isProduction ? morgan('combine', { stream: accessLogStream }) : morgan('dev'));
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
